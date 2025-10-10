@@ -3,8 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Calendar, MapPin, Award } from "lucide-react";
-// import { Card, CardContent } from "@/components/ui/card";
+import { Award } from "lucide-react";
 
 export default function About() {
   const ref = useRef(null);
@@ -77,13 +76,13 @@ export default function About() {
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
               <h3 className="text-2xl font-bold text-white mb-6">My Journey</h3>
               <p className="text-white/70 mb-6 leading-relaxed">
-                I'm a motivated and detail-oriented developer specializing in
-                React.js and Next.js, with a strong foundation in JavaScript,
+                I&aposm a motivated and detail-oriented developer specializing
+                in React.js and Next.js, with a strong foundation in JavaScript,
                 HTML, and CSS. My expertise extends to AI tools and frameworks,
                 including LlamaIndex, LangChain, and Generative AI.
               </p>
               <p className="text-white/70 mb-6 leading-relaxed">
-                I'm passionate about building responsive and scalable web
+                I&aposm passionate about building responsive and scalable web
                 applications, implementing efficient state management, and
                 creating clean, maintainable code that delivers exceptional user
                 experiences.

@@ -8,7 +8,6 @@ import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Navigation from "@/components/Navigation";
 import { motion } from "framer-motion";
-import { ArrowUp } from "lucide-react";
 import BackToTop from "@/components/back-top-top";
 
 export default function Portfolio() {
