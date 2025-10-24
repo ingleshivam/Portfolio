@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "Three.js",
     "portfolio",
   ],
-  authors: [{ name: "Alex Chen" }],
+  authors: [{ name: "Shivam Ingle" }],
   openGraph: {
     title: "Shivam Ingle - Next.Js Developer",
     description:
