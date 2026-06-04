@@ -123,6 +123,8 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-image: radial-gradient(circle at 1.5px 1.5px, oklch(0.2 0 0) 1.5px, transparent 0);
+    background-size: 28px 28px;
   }
   html {
     @apply font-sans;
@@ -148,4 +150,15 @@
     background: oklch(0.488 0.243 264.376 / 30%);
     color: oklch(0.9 0.05 264);
   }
+}
+
+@keyframes ping-slow {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-ping-slow {
+  animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
