@@ -1,34 +1,55 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import type { Metadata, Viewport } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import { Navbar } from "@/components/Navbar";
+import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
-  title: "Shivam Ingle - AI & Full-Stack Developer",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  ),
+  title: "Shivam Ingle | AI & Full-Stack Developer",
   description:
-    "Full-Stack and AI Developer specializing in LLM pipelines, RAG systems, and modern web applications built with React, Next.js, and Python.",
-  keywords:
-    "AI developer, LLM pipelines, RAG systems, Python, LangChain, LlamaIndex, React, Next.js, full-stack developer",
+    "AI and full-stack developer building production-minded LLM systems, data workflows, and thoughtful web products.",
+  keywords: [
+    "AI developer",
+    "full-stack developer",
+    "LangChain",
+    "RAG systems",
+    "Next.js",
+    "Python",
+  ],
   openGraph: {
-    title: "Shivam Ingle - AI & Full-Stack Developer",
+    title: "Shivam Ingle | AI & Full-Stack Developer",
     description:
-      "Developer at the intersection of AI and the web — building LLM pipelines, RAG systems, and production-grade full-stack applications.",
+      "I build AI systems that ship, from retrieval pipelines to thoughtful full-stack products.",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shivam Ingle | AI & Full-Stack Developer",
+    description: "I build AI systems that ship.",
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export const viewport: Viewport = {
+  themeColor: "#111113",
+  colorScheme: "dark",
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="dark scroll-smooth">
-      <body
-        className={`${inter.className} bg-zinc-950 text-zinc-50 antialiased`}
-      >
+      <body id="top" className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navbar />
         {children}
       </body>
