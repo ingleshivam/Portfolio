@@ -52,21 +52,29 @@ export function Navbar() {
             : "border-transparent bg-transparent",
         )}
       >
-        <a href="#top" className="flex items-center gap-2 rounded-full px-2 py-1 text-sm font-semibold tracking-tight text-white">
+        <a
+          href="#top"
+          className="flex items-center gap-2 rounded-full px-2 py-1 text-sm font-semibold tracking-tight text-white"
+        >
           <span className="grid size-7 place-items-center rounded-full bg-amber-300 text-xs font-bold text-zinc-950">
             SI
           </span>
-          <span className="hidden sm:inline">Shivam Ingle</span>
+          <span className="text-base hidden sm:inline">Shivam Ingle</span>
         </a>
 
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Main navigation">
+        <nav
+          className="hidden items-center gap-1 md:flex"
+          aria-label="Main navigation"
+        >
           {navLinks.map(({ label, href }) => (
             <a
               key={href}
               href={href}
               className={cn(
-                "rounded-full px-3 py-2 text-[13px] font-medium transition-colors",
-                activeSection === href ? "bg-white/[0.07] text-white" : "text-zinc-400 hover:text-white",
+                "rounded-full px-3 py-2 text-[14px] font-medium transition-colors text-base leading-7 text-zinc-300",
+                activeSection === href
+                  ? "bg-white/[0.07] text-white"
+                  : "text-zinc-400 hover:text-white",
               )}
             >
               {label}
@@ -75,7 +83,7 @@ export function Navbar() {
         </nav>
 
         <div className="hidden md:block">
-          <Button asChild size="sm">
+          <Button asChild size="sm" className="text-base">
             <a href={socialLinks.email}>Let&apos;s talk</a>
           </Button>
         </div>

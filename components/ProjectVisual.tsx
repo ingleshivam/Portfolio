@@ -1,25 +1,81 @@
-import { Check, Database, FileText, MapPin, Search, Send, Sparkles } from "lucide-react";
+import {
+  Bot,
+  Check,
+  CreditCard,
+  Database,
+  FileText,
+  FileUp,
+  Globe,
+  ListChecks,
+  MapPin,
+  RefreshCw,
+  Search,
+  Send,
+  ShieldCheck,
+  Sparkles,
+  SplitSquareHorizontal,
+} from "lucide-react";
 
 export function ProjectVisual({ type }: { type: string }) {
-  if (type === "pipeline") {
+  if (type === "graph") {
     return (
-      <div className="project-visual bg-[radial-gradient(circle_at_75%_20%,rgba(139,92,246,0.2),transparent_34%)]">
+      <div className="project-visual bg-[radial-gradient(circle_at_75%_20%,rgba(99,102,241,0.2),transparent_34%)]">
+        {/* Top row: main flow nodes */}
         <div className="absolute inset-x-8 top-8 flex items-center justify-between">
-          {[FileText, Search, Database, Sparkles].map((Icon, index) => (
+          {[Search, ListChecks, RefreshCw, Sparkles].map((Icon, index) => (
             <div key={index} className="relative flex items-center">
-              <div className="grid size-12 place-items-center rounded-2xl border border-violet-300/15 bg-violet-300/[0.08] text-violet-200 shadow-xl shadow-black/20">
+              <div className="grid size-12 place-items-center rounded-2xl border border-indigo-300/15 bg-indigo-300/[0.08] text-indigo-200 shadow-xl shadow-black/20">
                 <Icon className="size-5" />
               </div>
               {index < 3 && (
-                <div className="absolute left-12 top-1/2 h-px w-[calc((100vw-8rem)/8)] max-w-16 bg-gradient-to-r from-violet-300/35 to-transparent" />
+                <div className="absolute left-12 top-1/2 h-px w-[calc((100vw-8rem)/8)] max-w-16 bg-gradient-to-r from-indigo-300/35 to-transparent" />
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Branching line down to faithfulness check node */}
+        <div className="absolute left-1/2 top-[68px] h-6 w-px -translate-x-1/2 bg-gradient-to-b from-indigo-300/35 to-transparent" />
+        <div className="absolute left-1/2 top-[92px] -translate-x-1/2">
+          <div className="grid size-10 place-items-center rounded-2xl border border-indigo-300/15 bg-indigo-300/[0.08] text-indigo-200 shadow-xl shadow-black/20">
+            <ShieldCheck className="size-4" />
+          </div>
+        </div>
+
+        {/* Bottom status card */}
+        <div className="absolute inset-x-8 bottom-7 rounded-2xl border border-white/[0.08] bg-black/25 p-4 backdrop-blur-sm">
+          <div className="mb-3 flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.16em] text-indigo-200">
+            <span className="size-1.5 rounded-full bg-emerald-400" />
+            faithful · grounded
+          </div>
+          <div className="space-y-2">
+            <div className="h-1.5 w-11/12 rounded-full bg-white/15" />
+            <div className="h-1.5 w-7/12 rounded-full bg-white/10" />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (type === "agents") {
+    return (
+      <div className="project-visual bg-[radial-gradient(circle_at_75%_20%,rgba(14,165,233,0.2),transparent_34%)]">
+        <div className="absolute inset-x-8 top-8 flex items-center justify-between">
+          {[MapPin, Globe, Bot, CreditCard].map((Icon, index) => (
+            <div key={index} className="relative flex items-center">
+              <div className="grid size-12 place-items-center rounded-2xl border border-sky-300/15 bg-sky-300/[0.08] text-sky-200 shadow-xl shadow-black/20">
+                <Icon className="size-5" />
+              </div>
+              {index < 3 && (
+                <div className="absolute left-12 top-1/2 h-px w-[calc((100vw-8rem)/8)] max-w-16 bg-gradient-to-r from-sky-300/35 to-transparent" />
               )}
             </div>
           ))}
         </div>
         <div className="absolute inset-x-8 bottom-7 rounded-2xl border border-white/[0.08] bg-black/25 p-4 backdrop-blur-sm">
-          <div className="mb-3 flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.16em] text-violet-200">
+          <div className="mb-3 flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.16em] text-sky-200">
             <span className="size-1.5 rounded-full bg-emerald-400" />
-            grounded response
+            plan ready
           </div>
           <div className="space-y-2">
             <div className="h-1.5 w-11/12 rounded-full bg-white/15" />
@@ -30,28 +86,45 @@ export function ProjectVisual({ type }: { type: string }) {
     );
   }
 
-  if (type === "terminal") {
+  if (type === "canvas") {
     return (
-      <div className="project-visual bg-[radial-gradient(circle_at_80%_0%,rgba(251,191,36,0.18),transparent_38%)] p-7 font-mono">
-        <div className="mb-5 flex items-center gap-1.5">
-          <span className="size-2 rounded-full bg-red-400/70" />
-          <span className="size-2 rounded-full bg-amber-300/70" />
-          <span className="size-2 rounded-full bg-emerald-400/70" />
-          <span className="ml-auto text-[10px] uppercase tracking-[0.18em] text-zinc-600">sql agent</span>
-        </div>
-        <div className="space-y-4 text-xs">
-          <p className="text-zinc-500">Ask your database</p>
-          <div className="flex items-center justify-between rounded-xl border border-white/[0.08] bg-white/[0.04] px-3 py-2.5 text-zinc-300">
-            <span>Show revenue by quarter</span>
-            <Send className="size-3.5 text-amber-300" />
+      <div className="project-visual bg-[radial-gradient(circle_at_30%_30%,rgba(14,165,233,0.2),transparent_50%)]">
+        {/* Mini node graph */}
+        <div className="absolute inset-8 flex flex-col justify-between">
+          {/* Top row: source nodes */}
+          <div className="flex items-start justify-between">
+            {[FileUp, SplitSquareHorizontal, Database].map((Icon, i) => (
+              <div
+                key={i}
+                className="relative flex flex-col items-center gap-1.5"
+              >
+                <div className="grid size-10 place-items-center rounded-xl border border-sky-300/15 bg-sky-300/[0.08] text-sky-200 shadow-lg shadow-black/20">
+                  <Icon className="size-4" />
+                </div>
+                {/* Connector line downward */}
+                <div className="h-6 w-px bg-gradient-to-b from-sky-300/30 to-transparent" />
+              </div>
+            ))}
           </div>
-          <div className="space-y-2 pt-2">
-            <p><span className="text-violet-300">SELECT</span> quarter, <span className="text-amber-200">SUM</span>(revenue)</p>
-            <p><span className="text-violet-300">FROM</span> sales <span className="text-violet-300">GROUP BY</span> quarter;</p>
+
+          {/* Center: LLM node */}
+          <div className="flex justify-center">
+            <div className="flex items-center gap-2 rounded-2xl border border-sky-300/20 bg-sky-300/[0.08] px-4 py-2 shadow-xl shadow-black/20 backdrop-blur-sm">
+              <Sparkles className="size-4 text-sky-300" />
+              <span className="text-xs font-medium text-sky-200">LLM Node</span>
+            </div>
           </div>
-          <div className="flex items-center gap-2 text-emerald-300">
-            <Check className="size-3.5" />
-            <span className="text-[11px]">Query validated and executed</span>
+
+          {/* Bottom: output */}
+          <div className="rounded-2xl border border-white/[0.08] bg-black/25 p-3 backdrop-blur-sm">
+            <div className="mb-2 flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.16em] text-sky-200">
+              <span className="size-1.5 rounded-full bg-emerald-400" />
+              output
+            </div>
+            <div className="space-y-1.5">
+              <div className="h-1.5 w-10/12 rounded-full bg-white/15" />
+              <div className="h-1.5 w-7/12 rounded-full bg-white/10" />
+            </div>
           </div>
         </div>
       </div>
@@ -77,8 +150,12 @@ export function ProjectVisual({ type }: { type: string }) {
         </div>
       ))}
       <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/[0.08] bg-zinc-950/65 px-4 py-3 backdrop-blur-md">
-        <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-sky-300">Next stop</p>
-        <p className="mt-1 text-sm font-medium text-white">A visual journey through India</p>
+        <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-sky-300">
+          Next stop
+        </p>
+        <p className="mt-1 text-sm font-medium text-white">
+          A visual journey through India
+        </p>
       </div>
     </div>
   );

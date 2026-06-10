@@ -9,18 +9,18 @@ import {
   MapPin,
 } from "lucide-react";
 import { AnimateOnScroll } from "@/components/AnimateOnScroll";
+import { AboutSection } from "@/components/AboutSection";
 import { GithubIcon, LinkedinIcon } from "@/components/BrandIcons";
 import { ProjectVisual } from "@/components/ProjectVisual";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import {
   capabilities,
   experience,
   processSteps,
   projects,
-  proofPoints,
   socialLinks,
 } from "@/data/portfolio";
 
@@ -154,37 +154,9 @@ export default function Portfolio() {
         </a>
       </section>
 
-      <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <section id="about" className={sectionClass}>
-          <AnimateOnScroll>
-            <SectionHeading
-              number="01"
-              eyebrow="About"
-              title="Engineering useful things at the intersection of AI and the web."
-              description="I care about the space between a clever prototype and a product people can depend on: clear interfaces, sound architecture, and systems that hold up in production."
-            />
-          </AnimateOnScroll>
-          <div className="grid gap-5 md:grid-cols-3">
-            {proofPoints.map((point, index) => (
-              <AnimateOnScroll key={point.label} delay={index * 90}>
-                <Card className="h-full justify-between p-2 transition-colors hover:border-white/15 hover:bg-white/[0.04]">
-                  <CardHeader className="p-5">
-                    <span className="font-mono text-xs text-zinc-400">
-                      0{index + 1}
-                    </span>
-                    <CardTitle className="mt-7 text-5xl font-semibold tracking-[-0.06em] text-white">
-                      {point.value}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="p-5 pt-0 text-[15px] leading-6 text-zinc-300">
-                    {point.label}
-                  </CardContent>
-                </Card>
-              </AnimateOnScroll>
-            ))}
-          </div>
-        </section>
+      <AboutSection />
 
+      <div className="mx-auto max-w-[76rem] px-5 sm:px-8">
         <section id="experience" className={sectionClass}>
           <AnimateOnScroll>
             <SectionHeading

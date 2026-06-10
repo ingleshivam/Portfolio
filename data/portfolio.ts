@@ -3,17 +3,20 @@ import {
   Code2,
   Database,
   FileSearch,
+  GitBranch,
   Layers3,
   Map,
+  MapPin,
   Network,
   Sparkles,
   TerminalSquare,
+  Workflow,
 } from "lucide-react";
 
 export const socialLinks = {
   email: "mailto:ingleshivam@gmail.com",
-  github: "https://github.com/shivamingle",
-  linkedin: "https://linkedin.com/in/shivam-ingle",
+  github: "https://github.com/ingleshivam",
+  linkedin: "https://linkedin.com/in/shivam-i-969839163",
 };
 
 export const navLinks = [
@@ -54,42 +57,43 @@ export const capabilities = [
 export const projects = [
   {
     number: "01",
-    title: "Interactive Document Parser",
-    eyebrow: "AI knowledge system",
+    title: "Corrective RAG Pipeline",
+    eyebrow: "AI research assistant",
     description:
-      "Transforms dense PDF documents into searchable knowledge, then answers questions with grounded context instead of guesswork.",
+      "A self-correcting retrieval system that grades retrieved chunks for relevance, rewrites queries on miss, generates grounded answers, and verifies faithfulness — especially for math-heavy documents.",
     outcome:
-      "Designed the full retrieval flow: extraction, chunking, embeddings, vector search, and conversational answers.",
-    tags: ["Python", "LangChain", "Qdrant"],
-    Icon: FileSearch,
-    accent: "violet",
-    visual: "pipeline",
+      "Built the full CRAG loop: hybrid vector search, LLM-based relevance grading, query rewriting, answer generation, and a faithfulness checker that catches formula hallucinations.",
+    tags: ["Python", "LangGraph", "Qdrant", "Voyage AI", "Groq", "Next.js"],
+    Icon: GitBranch,
+    accent: "indigo",
+    visual: "graph",
   },
   {
     number: "02",
-    title: "Natural Language SQL Agent",
-    eyebrow: "Agentic analytics",
+    title: "AI Travel Planner",
+    eyebrow: "multi-agent system",
     description:
-      "Lets teams explore a PostgreSQL database in plain English while preserving schema context and readable query results.",
+      "Orchestrates a team of specialized AI agents to build a complete trip — live transport prices, hotel options, and a day-by-day itinerary — all within the user's budget.",
     outcome:
-      "Connected language models to structured data through schema-aware prompting and controlled SQL generation.",
-    tags: ["LlamaIndex", "PostgreSQL", "Agentic AI"],
-    Icon: TerminalSquare,
-    accent: "amber",
-    visual: "terminal",
+      "Built the full agent graph: supervisor routing, real-time web scraping for flights/trains/hotels, structured LLM outputs, and budget validation with replan logic.",
+    tags: ["Python", "LangGraph", "LangChain", "FastAPI"],
+    Icon: MapPin,
+    accent: "sky",
+    visual: "agents",
   },
+
   {
     number: "03",
-    title: "Parallax Travelogue",
-    eyebrow: "Interactive web experience",
+    title: "Visual AI Workflow Builder",
+    eyebrow: "No-code AI orchestration",
     description:
-      "A visual travel itinerary that uses scroll-linked storytelling to guide visitors through historic destinations across India.",
+      "A node-based canvas for composing AI pipelines — drag, connect, and run LLM chains and full RAG workflows without writing a single line of code.",
     outcome:
-      "Built a responsive, motion-led interface with a deliberate content rhythm across desktop and mobile.",
-    tags: ["Next.js", "Tailwind CSS", "Motion"],
-    Icon: Map,
+      "Built the end-to-end system: React Flow canvas, 10+ typed nodes (DocUpload → Chunker → Embedder → Retriever → LLM), LangGraph backend, and Qdrant vector store.",
+    tags: ["React Flow", "LangGraph", "Qdrant", "FastAPI"],
+    Icon: Workflow,
     accent: "sky",
-    visual: "map",
+    visual: "canvas",
   },
 ];
 
@@ -118,7 +122,7 @@ export const experience = [
   {
     type: "Education",
     date: "2021 - 2024",
-    title: "B.E. in Computer Science & Engineering",
+    title: "B.Tech. in Computer Science & Engineering",
     place: "D.Y. Patil College of Engineering & Technology",
     description:
       "Focused on modern web development, software engineering, and applied AI/ML technologies.",
