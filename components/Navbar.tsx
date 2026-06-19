@@ -56,10 +56,10 @@ export function Navbar() {
           href="#top"
           className="flex items-center gap-2 rounded-full px-2 py-1 text-sm font-semibold tracking-tight text-white"
         >
-          <span className="grid size-7 place-items-center rounded-full bg-amber-300 text-xs font-bold text-zinc-950">
+          <span className="grid size-7 place-items-center rounded-full bg-amber-300 text-sm font-bold text-zinc-950">
             SI
           </span>
-          <span className="text-base hidden sm:inline">Shivam Ingle</span>
+          <span className="text-lg hidden sm:inline">Shivam Ingle</span>
         </a>
 
         <nav
@@ -83,7 +83,7 @@ export function Navbar() {
         </nav>
 
         <div className="hidden md:block">
-          <Button asChild size="sm" className="text-base">
+          <Button asChild size="sm" className="text-lg">
             <a href={socialLinks.email}>Let&apos;s talk</a>
           </Button>
         </div>
